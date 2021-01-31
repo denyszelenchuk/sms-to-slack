@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">#smsToSlack</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_delete_all_rules">Delete all rules</string>
+    <string name="action_delete_all_channels">Delete all channels</string>
+    <string name="action_done">Done</string>
+    <string name="contact_developer">Send feedback</string>
+    <string name="channel_slack">Slack Channel</string>
+    <string name="channel_grant_action">GRANT</string>
+    <string name="channel_grant_snackbar_text">The SMS permission should be granted</string>
+    <string name="channel_description">Add Slack Channels by clicking + button.\n\nChannel example:\n<b><i>#channel</i></b>\n\nWebHook example:\n<b><i>https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXX</i></b>\n\nRead how to enable Slack WebHooks here:\n<a href="https://testyour.app/blog/sms-to-slack">https://testyour.app/blog/sms-to-slack</a></string>
+    <string name="channel_webhook">WebHook: %1$s</string>
+    <string name="channel_webhook_hint">WebHook</string>
+    <string name="channel_name_hint">Channel name</string>
+    <string name="continue_button">Continue</string>
+    <string name="donate_text">Help to maintain this app and keep it Ads free!</string>
+    <string name="donate_hint">Donate amount in CHF</string>
+    <string name="explain_change_sms_app_description">After clicking <b>CONTINUE</b> button you will be asked to set <b><i>#smsToSlack</i></b> app as default SMS application.\n\nThis is needed for getting required permissions to be notified about incoming SMS messages.\n
+        \nAfter that you will be immediately asked to revert back default SMS application.</string>
+    <string name="explain_change_sms_app_title">Change default SMS app</string>
+    <string name="explain_change_to_default_sms_app_description">After clicking <b>CONTINUE</b> button you will be asked to set back default SMS application to the initial value.</string>
+    <string name="explain_change_to_default_sms_app_title">Revert default SMS app</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">#smsToSlack</string>
+    <string name="nav_header_subtitle">https://testyour.app</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="notification_donate_description">Tap notification to donate</string>
+    <string name="rule_name">Rule name</string>
+    <string name="rule_channel_title_hint">Slack Channel</string>
+    <string name="rule_description">Add SMS redirection rules by clicking <b>+</b> button.\n\nRule Name example:\n<b><i>Rule sample</i></b>\n\nSender Name example:\n<b><i>Twitter</i></b>\n\nSender Phone # example:\n<b><i>+41234567890</i></b>
+</string>
+    <string name="rule_sender_name_hint">Sender Name</string>
+    <string name="rule_sender_name">Sender Name: %1$s</string>
+    <string name="rule_phone_number_hint">Sender Phone #</string>
+    <string name="rule_optional">(optional)</string>
+    <string name="rule_phone_number">Sender Phone #: %1$s</string>
+    <string name="rule_add_a_channel">Add at least one Slack Channel</string>
+    <string name="redirected_to_slack">All the SMSs will be redirected to slack :)</string>
+    <string name="title_activity_main">Slack Channels</string>
+    <string name="title_activity_add_rule">Add Rule</string>
+    <string name="title_activity_add_channel">Add Channel</string>
+    <string name="rule_channel_title">Channel: %1$s</string>
+    <string name="save_button">Save</string>
+    <string name="share_application">Share application</string>
+    <string name="share_application_message">Check this #smsToSlack application. It can be useful.\nHow to use: https://testyour.app/blog/sms-to-slack\nSource code: https://github.com/denyszelenchuk/sms-to-slack</string>
+    <string name="sms_redirection_error_toast">#smsToSlack: Looks like Slack Channel \"%1$s\" doesn\'t exist or associated WebHook is not valid. Failed to redirect SMS!</string>
+    <string name="title_activity_rules">Redirection Rules</string>
+    <string name="title_activity_card_input">Provide card details</string>
+    <string name="title_communicate">Communicate</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_privacy">Privacy &amp; terms</string>
+</resources>

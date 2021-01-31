@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.slacksms.app">
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:allowBackup="false"
+        android:name=".App"
+        android:icon="@mipmap/slacksms_white_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/slacksms_white_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+
+        <activity
+            android:name=".channels.ChannelsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".channels.AddChannelActivity"
+            android:label="@string/title_activity_add_channel">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.slacksms.app.channels.ChannelsActivity" />
+        </activity>
+
+        <activity
+            android:name=".privacy.PrivacyWebViewActivity"
+            android:label="@string/title_privacy"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.slacksms.app.channels.ChannelsActivity" />
+        </activity>
+
+        <activity
+            android:name=".rules.AddRuleActivity"
+            android:label="@string/title_activity_add_rule">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.slacksms.app.rules.RulesActivity" />
+        </activity>
+
+        <activity
+            android:name=".donate.DonateActivity"
+            android:label="@string/title_donate"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".rules.RulesActivity"
+            android:label="@string/title_activity_rules"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".stripe.CardInputWidgetActivity"
+            android:label="@string/title_activity_card_input">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.slacksms.app.rules.RulesActivity" />
+        </activity>
+
+
+        <receiver
+            android:name=".receivers.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receivers.SMSReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.GSM_SMS_RECEIVED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".MyService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

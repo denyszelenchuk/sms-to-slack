@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    compileSdkVersion 30
+    defaultConfig {
+        buildConfigField 'String', 'PUBLISHABLE_KEY', properties.getProperty('PUBLISHABLE_KEY', '""')
+        buildConfigField 'String', 'BASE_URL', properties.getProperty('BASE_URL', '""')
+        buildConfigField 'String', 'STRIPE_ACCOUNT_ID', properties.getProperty('STRIPE_ACCOUNT_ID', '""')
+        applicationId "com.slacksms.app"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 16
+        versionName "1.6"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'net.gpedro.integrations.slack:slack-webhook:1.4.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.room:room-runtime:2.2.6'
+    implementation 'com.stripe:stripe-android:16.2.0'
+
+    /* Needed for RxAndroid */
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+    kapt "androidx.room:room-compiler:2.2.6"
+
+    /* Used for server calls */
+    implementation 'com.squareup.okio:okio:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+
+    /* Used to make Retrofit easier and GSON & Rx-compatible*/
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+
+    // Used to debug your Retrofit connections
+    // Do not upgrade as it will require increasing minSdkVersion to 21
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.3'
+}

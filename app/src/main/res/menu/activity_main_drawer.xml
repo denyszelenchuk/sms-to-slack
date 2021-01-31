@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_channels"
+            android:icon="@drawable/sharp_vertical_split_24"
+            android:title="@string/title_activity_main" />
+        <item
+            android:id="@+id/nav_rules"
+            android:icon="@drawable/round_swap_calls_24"
+            android:title="@string/title_activity_rules" />
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_menu_money_24"
+            android:title="@string/title_donate" />
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/baseline_security_24"
+            android:title="@string/title_privacy" />
+    </group>
+
+    <item android:title="@string/title_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share_application" />
+        </menu>
+    </item>
+
+</menu>
